@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Área do Cliente | Turminha da Bagunça</title>
+
+    <link rel="stylesheet" href="/public/static/style.css">
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div class="container nav">
+
+            <a href="index.html" class="logo">
+
+                <span class="logo-icon">🎉</span>
+
+                <span>
+                    <strong>Turminha</strong>
+                    <small>DA BAGUNÇA</small>
+                </span>
+
+            </a>
+
+
+            <nav class="menu" id="menu">
+
+                <a href="index.html">Início</a>
+
+                <a href="servicos.html">Serviços</a>
+
+                <a href="pacotes.html">Pacotes</a>
+
+                <a href="monte-sua-festa.html">Monte sua festa</a>
+
+            </nav>
+
+
+            <div class="nav-actions">
+
+                <a href="login.html" class="login">
+                    Entrar
+                </a>
+
+                <a href="monte-sua-festa.html" class="btn btn-small">
+                    Fazer orçamento
+                </a>
+
+            </div>
+
+
+            <button type="button" class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+    <main>
+
+        <section class="cliente-page">
+
+            <span class="floating-dot dot-one"></span>
+            <span class="floating-dot dot-two"></span>
+            <span class="floating-dot dot-three"></span>
+
+
+            <div class="container cliente-container">
+
+
+                <!-- LADO ESQUERDO -->
+
+                <div class="cliente-intro">
+
+                    <span class="cliente-icon">
+                        🎉
+                    </span>
+
+
+                    <h1>
+                        Área do<br>
+                        <span>cliente.</span>
+                    </h1>
+
+
+                    <p>
+                        Acompanhe orçamentos, confirme o roteiro da festa,
+                        faça upload da lista de convidados e guarde as fotos
+                        do grande dia — tudo em um lugar só.
+                    </p>
+
+
+                    <ul>
+
+                        <li>
+                            Status do seu orçamento em tempo real
+                        </li>
+
+                        <li>
+                            Contrato e recibos para download
+                        </li>
+
+                        <li>
+                            Checklist da festa com a equipe
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+
+                <!-- LADO DIREITO -->
+
+                <div class="auth-card">
+
+
+                    <!-- ABAS -->
+
+                    <div class="auth-tabs">
+
+                        <button type="button" class="auth-tab active" id="loginTab">
+
+                            Entrar
+
+                        </button>
+
+
+                        <button type="button" class="auth-tab" id="registerTab">
+
+                            Criar conta
+
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- ================================
+                         LOGIN
+                    ================================= -->
+
+                    <form id="loginForm" class="auth-form active">
+
+                        <div class="form-group">
+
+                            <label for="loginEmail">
+                                E-mail
+                            </label>
+
+                            <input type="email" id="loginEmail" name="email" autocomplete="email" required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="loginPassword">
+                                Senha
+                            </label>
+
+                            <input type="password" id="loginPassword" name="password" autocomplete="current-password"
+                                required>
+
+                        </div>
+
+
+                        <a href="#" class="forgot-password" id="forgotPassword">
+
+                            Esqueci minha senha
+
+                        </a>
+
+
+                        <button type="submit" class="btn auth-submit">
+
+                            Entrar
+
+                        </button>
+
+
+                        <p class="auth-message" id="loginMessage">
+                        </p>
+
+
+                        <p class="auth-bottom">
+
+                            Ainda não tem orçamento?
+
+                            <a href="monte-sua-festa.html">
+                                Monte sua festa
+                            </a>
+
+                        </p>
+
+                    </form>
+
+
+
+                    <!-- ================================
+                         CRIAR CONTA
+                    ================================= -->
+
+                    <form id="registerForm" class="auth-form">
+
+                        <div class="form-group">
+
+                            <label for="registerName">
+                                Nome
+                            </label>
+
+                            <input type="text" id="registerName" name="name" autocomplete="name" required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="registerEmail">
+                                E-mail
+                            </label>
+
+                            <input type="email" id="registerEmail" name="email" autocomplete="email" required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="registerPhone">
+                                Telefone
+                            </label>
+
+                            <input type="tel" id="registerPhone" name="phone" autocomplete="tel"
+                                placeholder="(21) 99999-9999" required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="registerPassword">
+                                Senha
+                            </label>
+
+                            <input type="password" id="registerPassword" name="password" autocomplete="new-password"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="registerPasswordConfirm">
+                                Confirmar senha
+                            </label>
+
+                            <input type="password" id="registerPasswordConfirm" name="password_confirm"
+                                autocomplete="new-password" required>
+
+                        </div>
+
+
+                        <button type="submit" class="btn auth-submit">
+
+                            Criar conta
+
+                        </button>
+
+
+                        <p class="auth-message" id="registerMessage">
+                        </p>
+
+
+                        <p class="auth-bottom">
+
+                            Já possui uma conta?
+
+                            <a href="#" id="goToLogin">
+
+                                Entrar
+
+                            </a>
+
+                        </p>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ================================
+         FOOTER
+    ================================= -->
+
+    <footer class="cliente-footer">
+
+        <div class="container footer-main">
+
+
+            <div class="footer-brand">
+
+                <h2>
+                    Turminha da Bagunça
+                </h2>
+
+                <p>
+                    Animação infantil no Rio de Janeiro desde 2014.<br>
+                    Recreação, personagens, oficinas e muita energia boa<br>
+                    para a festa do seu pequeno.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>NAVEGUE</h3>
+
+                <a href="index.html#servicos">
+                    Catálogo de serviços
+                </a>
+
+                <a href="index.html#pacotes">
+                    Pacotes
+                </a>
+
+                <a href="festa.html">
+                    Monte sua festa
+                </a>
+
+                <a href="login.html">
+                    Área do cliente
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>CONTATO</h3>
+
+                <span>☎ (21) 99876-5432</span>
+
+                <span>✉ oi@turminhadabagunca.com.br</span>
+
+                <span>◎ @turminhadabagunca</span>
+
+                <span>⌖ Tijuca, Rio de Janeiro — RJ</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            © 2026 Turminha da Bagunça.
+            Atendemos toda a Grande Rio.
+
+        </div>
+
+    </footer>
+
+
+
+    <script src="/public/static/script.js"></script>
+
+</body>
+
+</html>

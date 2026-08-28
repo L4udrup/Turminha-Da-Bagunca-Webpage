@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Monte sua festa | Turminha da Bagunça</title>
+
+    <link rel="stylesheet" href="/public/static/style.css">
+</head>
+
+<body>
+
+    <header class="header">
+
+    <div class="container nav">
+
+      <a href="index.html" class="logo">
+
+        <span class="logo-icon">🎉</span>
+
+        <div>
+          <strong>Turminha</strong>
+          <small>DA BAGUNÇA</small>
+        </div>
+
+      </a>
+
+
+      <nav class="menu" id="menu">
+
+        <a href="index.html">
+          Início
+        </a>
+
+        <a href="servicos.html">
+          Serviços
+        </a>
+
+        <a href="pacotes.html">
+          Pacotes
+        </a>
+
+        <a href="monte-sua-festa.html" class="active">
+          Monte sua festa
+        </a>
+
+      </nav>
+
+
+      <div class="nav-actions">
+
+        <a href="login.html" class="login">
+          Entrar
+        </a>
+
+        <a href="monte-sua-festa.html" class="btn btn-small">
+          Fazer orçamento
+        </a>
+
+      </div>
+
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" type="button">
+        ☰
+      </button>
+
+    </div>
+
+  </header>
+
+    <main class="festa-page">
+
+        <div class="festa-container">
+
+            
+            <section class="festa-intro">
+
+                <span class="festa-eyebrow">
+                    MONTE SUA FESTA
+                </span>
+
+                <h1>
+                    Conte da festa e a gente
+                    <span>monta o roteiro</span>
+                </h1>
+
+                <p>
+                    Leva 2 minutinhos. Sem compromisso — você recebe uma proposta e decide depois.
+                </p>
+
+            </section>
+
+
+            <!-- FORMULÁRIO -->
+            <form class="festa-form" id="quoteForm">
+
+                <!-- QUEM ESTÁ ORGANIZANDO -->
+                <section class="festa-card">
+
+                    <h2>Quem está organizando</h2>
+
+                    <div class="festa-grid">
+
+                        <div class="festa-field">
+
+                            <label for="nome">
+                                Seu nome
+                            </label>
+
+                            <input type="text" id="nome" name="nome" required>
+
+                        </div>
+
+
+                        <div class="festa-field">
+
+                            <label for="telefone">
+                                Telefone / WhatsApp
+                            </label>
+
+                            <input type="tel" id="telefone" name="telefone" required>
+
+                        </div>
+
+
+                        <div class="festa-field festa-full">
+
+                            <label for="email">
+                                E-mail
+                            </label>
+
+                            <input type="email" id="email" name="email" required>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- SOBRE A FESTA -->
+                <section class="festa-card">
+
+                    <h2>Sobre a festa</h2>
+
+                    <div class="festa-grid">
+
+                        <div class="festa-field">
+
+                            <label for="aniversariante">
+                                Nome do aniversariante
+                            </label>
+
+                            <input type="text" id="aniversariante" name="aniversariante" required>
+
+                        </div>
+
+
+                        <div class="festa-field">
+
+                            <label for="idade">
+                                Idade que vai fazer
+                            </label>
+
+                            <input type="number" id="idade" name="idade" min="1" required>
+
+                        </div>
+
+
+                        <div class="festa-field">
+
+                            <label for="data">
+                                Data
+                            </label>
+
+                            <input type="date" id="data" name="data" required>
+
+                        </div>
+
+
+                        <div class="festa-field">
+
+                            <label for="horario">
+                                Horário de início
+                            </label>
+
+                            <input type="time" id="horario" name="horario" required>
+
+                        </div>
+
+
+                        <div class="festa-field">
+
+                            <label for="criancas">
+                                Quantas crianças
+                            </label>
+
+                            <input type="number" id="criancas" name="criancas" min="1" required>
+
+                        </div>
+
+
+                        <div class="festa-field">
+
+                            <label for="bairro">
+                                Bairro
+                            </label>
+
+                            <select id="bairro" name="bairro" required>
+
+                                <option value="">
+                                    Selecione
+                                </option>
+
+                                <option value="barra-da-tijuca">
+                                    Barra da Tijuca
+                                </option>
+
+                                <option value="recreio">
+                                    Recreio
+                                </option>
+
+                                <option value="jacarepagua">
+                                    Jacarepaguá
+                                </option>
+
+                                <option value="zona-sul">
+                                    Zona Sul
+                                </option>
+
+                                <option value="zona-norte">
+                                    Zona Norte
+                                </option>
+
+                                <option value="zona-oeste">
+                                    Zona Oeste
+                                </option>
+
+                                <option value="centro">
+                                    Centro
+                                </option>
+
+                                <option value="outro">
+                                    Outro
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="festa-field festa-full">
+
+                            <label for="endereco">
+                                Endereço ou nome do salão
+                            </label>
+
+                            <input type="text" id="endereco" name="endereco" required>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ATRAÇÕES -->
+                <section class="festa-card">
+
+                    <h2>Atrações</h2>
+
+
+                    <div class="festa-field">
+
+                        <label for="pacote">
+                            Pacote base
+                        </label>
+
+                        <select id="pacote" name="pacote" required>
+
+                            <option value="">
+                                Selecione o pacote
+                            </option>
+
+                            <option value="basico">
+                                Pacote Básico
+                            </option>
+
+                            <option value="diversao">
+                                Pacote Diversão
+                            </option>
+
+                            <option value="completo">
+                                Pacote Completo
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="festa-field festa-atracoes">
+
+                        <label>
+                            O que não pode faltar
+                        </label>
+
+
+                        <div class="festa-atracoes-grid">
+
+                            <label class="festa-atracao">
+
+                                <input type="checkbox" name="atracoes" value="recreacao">
+
+                                <span>
+                                    Recreação monitorada
+                                </span>
+
+                            </label>
+
+
+                            <label class="festa-atracao">
+
+                                <input type="checkbox" name="atracoes" value="pintura">
+
+                                <span>
+                                    Pintura facial e glitter
+                                </span>
+
+                            </label>
+
+
+                            <label class="festa-atracao">
+
+                                <input type="checkbox" name="atracoes" value="personagem">
+
+                                <span>
+                                    Personagem vivo
+                                </span>
+
+                            </label>
+
+
+                            <label class="festa-atracao">
+
+                                <input type="checkbox" name="atracoes" value="magica">
+
+                                <span>
+                                    Show de mágica
+                                </span>
+
+                            </label>
+
+
+                            <label class="festa-atracao">
+
+                                <input type="checkbox" name="atracoes" value="slime">
+
+                                <span>
+                                    Oficina de slime
+                                </span>
+
+                            </label>
+
+
+                            <label class="festa-atracao">
+
+                                <input type="checkbox" name="atracoes" value="cama-elastica">
+
+                                <span>
+                                    Cama elástica
+                                </span>
+
+                            </label>
+
+
+                            <label class="festa-atracao">
+
+                                <input type="checkbox" name="atracoes" value="baloes">
+
+                                <span>
+                                    Escultura de balões
+                                </span>
+
+                            </label>
+
+
+                            <label class="festa-atracao">
+
+                                <input type="checkbox" name="atracoes" value="karaoke">
+
+                                <span>
+                                    Karaokê kids
+                                </span>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- OBSERVAÇÕES -->
+                    <div class="festa-field">
+
+                        <label for="observacoes">
+                            Observações (tema, alergias, acesso ao local)
+                        </label>
+
+                        <textarea id="observacoes" name="observacoes"
+                            placeholder="Ex.: tema dinossauros, uma criança com alergia a glitter..."></textarea>
+
+                    </div>
+
+                </section>
+
+
+                <!-- MENSAGEM -->
+                <div class="festa-message" id="formMessage"></div>
+
+
+                <!-- BOTÃO -->
+                <button type="submit" class="festa-submit">
+                    Enviar e receber orçamento
+                </button>
+
+            </form>
+
+        </div>
+
+    </main>
+
+
+
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+            <a href="index.html" class="logo">
+
+                <span class="logo-icon">🎉</span>
+
+                <div>
+                    <strong>Turminha</strong>
+                    <small>DA BAGUNÇA</small>
+                </div>
+
+            </a>
+
+            <p>
+                © 2026 Turminha da Bagunça. Todos os direitos reservados.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="/public/static/script.js"></script>
+
+</body>
+
+</html>
