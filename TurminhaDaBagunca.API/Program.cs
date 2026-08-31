@@ -7,7 +7,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Adicionando o OpenAPI aos serviços da aplicação
 // Vou utilizar o OpenAPI para documentar e testar os endpoints da minha API
-builder.Services.AddOpenApi();
+builder.Services.AddOpenApi(options =>
+{
+    options.OpenApiVersion = Microsoft.OpenApi.OpenApiSpecVersion.OpenApi3_0;
+});
 
 // Adicionando o AppDbContext aos serviços da aplicação para podermos utilizar o Entity Framework
 // e conectá-lo ao banco de dados SQL Server LocalDB
@@ -26,6 +29,14 @@ UsuariosEndpoints.Registrar(app);
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+
+    // Configurando o Swagger UI para exibir a documentação da API de forma interativa
+    app.UseSwaggerUI(options =>
+    {
+        options.DocumentTitle = "Turminha da Bagunça API";
+        options.SwaggerEndpoint("/openapi/v1.json", "v1");
+        options.RoutePrefix = string.Empty;
+    });
 }
 
 

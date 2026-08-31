@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using TurminhaDaBagunca.API.Data;
 using TurminhaDaBagunca.API.Models;
 using TurminhaDaBagunca.API.Dtos;
+using System.ComponentModel.DataAnnotations;
 
 namespace TurminhaDaBagunca.API.Endpoints;
 
@@ -71,6 +72,15 @@ public class UsuariosEndpoints
         app.MapPost("/Usuarios", async (UsuarioCreateDto usuario, AppDbContext db) =>
         {
 
+            // Validando os dados recebidos na requisição utilizando DataAnnotations
+            var erros = new List<ValidationResult>();
+            var contexto = new ValidationContext(usuario);
+            var valido = Validator.TryValidateObject(usuario, contexto, erros, true);
+            if (!valido)
+            {
+                return Results.BadRequest(erros);
+            }
+
             // Criando um novo objeto na classe Usuario com os dados recebidos na requisição
             // Vou utilizar esse objeto para preparar os dados do usuário para serem salvos no banco
             // NovoUsuario é o objeto que pode ser salvo no banco
@@ -80,8 +90,8 @@ public class UsuariosEndpoints
                 Nome = usuario.Nome,
                 Email = usuario.Email,
                 Telefone = usuario.Telefone,
-                // SenhaHash é o campo que vai receber a senha do usuário, mas de forma criptografada (ainda não está criptografada)
-                SenhaHash = usuario.Senha,
+                // Gerando o hash da senha recebida na requisição utilizando a biblioteca BCrypt.Net
+                SenhaHash = BCrypt.Net.BCrypt.HashPassword(usuario.Senha),
             };
 
             // Adicionando o usuário recebido ao DbSet de usuários
@@ -92,9 +102,19 @@ public class UsuariosEndpoints
             // Vou utilizar esse método para realmente efetivar o cadastro do usuário no banco
             await db.SaveChangesAsync();
 
+            // Criando um objeto UsuarioResponseDto para retornar apenas os dados que quero expor na resposta
+            var UsuarioResponse = new UsuarioResponseDto
+            {
+                ID = NovoUsuario.ID,
+                Nome = NovoUsuario.Nome,
+                Email = NovoUsuario.Email,
+                Telefone = NovoUsuario.Telefone,
+                DataCadastro = NovoUsuario.DataCadastro
+            };
+
             // Retornando uma resposta 201 Created informando que o usuário foi criado
             // Vou retornar também o endereço do usuário criado e os seus dados no body da resposta
-            return Results.Created($"/Usuarios/{NovoUsuario.ID}", NovoUsuario);
+            return Results.Created($"/Usuarios/{NovoUsuario.ID}", UsuarioResponse);
         });
 
         /* =========================================================
@@ -150,6 +170,29 @@ public class UsuariosEndpoints
             await db.SaveChangesAsync();
 
             return Results.NoContent();
+        });
+        
+        /* =========================================================
+                                 Login
+        ========================================================= */
+
+        app.MapPost("/Usuarios/Login", async (UsuarioLoginDto usuario, AppDbContext db) =>
+        {
+            var UsuarioDb = await db.Usuarios.FirstOrDefaultAsync(u => u.Email == usuario.Email);
+
+            if (UsuarioDb == null)
+            {
+                return Results.Unauthorized();
+            }
+
+            var senhaCorreta = BCrypt.Net.BCrypt.Verify(usuario.Senha, UsuarioDb.SenhaHash);
+
+            if (!senhaCorreta)
+            {
+                return Results.Unauthorized();
+            }
+
+            return Results.Ok();
         });
     }
 }
