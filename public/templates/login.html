@@ -165,17 +165,29 @@
                                 Senha
                             </label>
 
-                            <input type="password" id="loginPassword" name="password" autocomplete="current-password"
-                                required>
+                            <div class="password-wrapper">
+                                <input type="password" id="loginPassword" name="password" autocomplete="current-password" required>
+                                <button type="button" class="toggle-password" aria-label="Mostrar ou ocultar senha">
+                                    👁️
+                                </button>
+                            </div>
 
                         </div>
 
 
-                        <a href="#" class="forgot-password" id="forgotPassword">
+                        <!-- OPÇÕES DE LOGIN: LEMBRAR DE MIM & ESQUECI A SENHA -->
+                        <div class="form-options">
 
-                            Esqueci minha senha
+                            <label class="remember-me">
+                                <input type="checkbox" id="rememberMe" name="remember_me">
+                                <span>Lembrar de mim</span>
+                            </label>
 
-                        </a>
+                            <a href="#" class="forgot-password" id="forgotPassword">
+                                Esqueci minha senha
+                            </a>
+
+                        </div>
 
 
                         <button type="submit" class="btn auth-submit">
@@ -249,8 +261,12 @@
                                 Senha
                             </label>
 
-                            <input type="password" id="registerPassword" name="password" autocomplete="new-password"
-                                required>
+                            <div class="password-wrapper">
+                                <input type="password" id="registerPassword" name="password" autocomplete="new-password" required>
+                                <button type="button" class="toggle-password" aria-label="Mostrar ou ocultar senha">
+                                    👁️
+                                </button>
+                            </div>
 
                         </div>
 
@@ -261,8 +277,12 @@
                                 Confirmar senha
                             </label>
 
-                            <input type="password" id="registerPasswordConfirm" name="password_confirm"
-                                autocomplete="new-password" required>
+                            <div class="password-wrapper">
+                                <input type="password" id="registerPasswordConfirm" name="password_confirm" autocomplete="new-password" required>
+                                <button type="button" class="toggle-password" aria-label="Mostrar ou ocultar senha">
+                                    👁️
+                                </button>
+                            </div>
 
                         </div>
 

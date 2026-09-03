@@ -1392,6 +1392,83 @@ RESPONSIVO — MONTE SUA FESTA
 }
 
 /* =========================================================
+VISUALIZAR SENHA E LEMBRAR DE MIM
+========================================================= */
+
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-wrapper input {
+  padding-right: 40px !important; /* Espaço para o botão olho */
+}
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 1;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+  user-select: none;
+}
+
+.toggle-password:hover {
+  opacity: 1;
+}
+
+/* CONTAINER DAS OPÇÕES (LEMBRAR DE MIM + ESQUECI A SENHA) */
+
+.form-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: -4px;
+  margin-bottom: 16px;
+  font-size: 11px;
+}
+
+/* CHECKBOX LEMBRAR DE MIM */
+
+.remember-me {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+}
+
+.remember-me input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  accent-color: var(--orange);
+  cursor: pointer;
+  margin: 0;
+}
+
+/* AJUSTE NA CLASSE ESQUECI A SENHA EXISTENTE PARA ALINHAMENTO */
+
+.forgot-password {
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: var(--orange);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
 INTRO
 ========================================================= */
 
@@ -1610,9 +1687,6 @@ ESQUECI MINHA SENHA
 
 .forgot-password {
   display: inline-block;
-
-  margin-top: -3px;
-  margin-bottom: 13px;
 
   color: var(--orange);
 
@@ -1864,6 +1938,17 @@ RESPONSIVO
 
   .auth-tab {
     font-size: 11px;
+  }
+
+  .form-options {
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .remember-me, 
+  .forgot-password {
+    font-size: 10.5px;
   }
 
 }

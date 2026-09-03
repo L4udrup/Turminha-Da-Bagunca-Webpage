@@ -2,7 +2,19 @@ using Microsoft.EntityFrameworkCore;
 using TurminhaDaBagunca.API.Data;
 using TurminhaDaBagunca.API.Models;
 using TurminhaDaBagunca.API.Dtos;
+//usado para acessar o banco de dados e manipular os dados dos usuários
 using System.ComponentModel.DataAnnotations;
+// Usado para criar e trabalhar com tokens JWT,
+// permitindo gerar o token que será enviado ao usuário após o login
+using System.IdentityModel.Tokens.Jwt;
+// Usado para criar as Claims
+using System.Security.Claims;
+// Usado para configurar a segurança do JWT,
+// como a chave usada para assinar e validar o token e o algoritmo de assinatura
+using Microsoft.IdentityModel.Tokens;
+// Usado para converter a chave secreta do JWT de texto para bytes
+using System.Text;
+
 
 namespace TurminhaDaBagunca.API.Endpoints;
 
@@ -176,7 +188,8 @@ public class UsuariosEndpoints
                                  Login
         ========================================================= */
 
-        app.MapPost("/Usuarios/Login", async (UsuarioLoginDto usuario, AppDbContext db) =>
+        // IConfiguration me permite acessar as configurações do appsettings.json dentro do endpoint (Nativo do .NET)
+        app.MapPost("/Usuarios/Login", async (UsuarioLoginDto usuario, AppDbContext db, IConfiguration config) =>
         {
             var UsuarioDb = await db.Usuarios.FirstOrDefaultAsync(u => u.Email == usuario.Email);
 
@@ -192,7 +205,40 @@ public class UsuariosEndpoints
                 return Results.Unauthorized();
             }
 
-            return Results.Ok();
+            // Criando as claims do token JWT (informações do usuario)
+            // Vou utilizar essas claims para gerar o token JWT que será retornado para o usuário
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.NameIdentifier, UsuarioDb.ID.ToString()),
+                new Claim(ClaimTypes.Name, UsuarioDb.Nome),
+                new Claim(ClaimTypes.Email, UsuarioDb.Email),
+            };
+
+            // Recebendo a chave secreta do JWT do appsettings.json
+            var jwtkey = config["Jwt:Key"];
+            // Criando as credenciais de assinatura do token JWT (chave secreta e algoritmo de assinatura)
+            var credentials = new SigningCredentials(
+                // Chave secreta do JWT convertida para bytes e utilizada para assinar o token JWT
+                new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtkey!)),
+                // Algoritmo de assinatura do token JWT
+                SecurityAlgorithms.HmacSha256
+            );
+
+            // Criando o token JWT com as claims do usuário
+            // Vou utilizar esse token para autenticar o usuário na minha API
+            var token = new JwtSecurityToken(
+                issuer: config["Jwt:Issuer"],
+                audience: config["Jwt:Audience"],
+                claims: claims,
+                // signingCredentials contém a chave e o algoritmo que vou usar para assinar o token JWT
+                signingCredentials: credentials,
+
+                expires: DateTime.UtcNow.AddHours(5)
+            );
+
+            var tokenString = new JwtSecurityTokenHandler().WriteToken(token);
+
+            return Results.Ok(tokenString);
         });
     }
 }
