@@ -236,6 +236,8 @@ public class UsuariosEndpoints
                 expires: DateTime.UtcNow.AddHours(5)
             );
 
+
+            // Gerando o token JWT em formato de string para enviar para o usuário
             var tokenString = new JwtSecurityTokenHandler().WriteToken(token);
 
             return Results.Ok(tokenString);
