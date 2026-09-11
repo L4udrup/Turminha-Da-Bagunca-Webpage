@@ -286,7 +286,7 @@ HERO
 
   font-size: 11px;
   font-weight: 800;
-  
+
 
   letter-spacing: .2px;
 }
@@ -342,13 +342,13 @@ HERO
   overflow: hidden;
 
   background:
-  radial-gradient(circle at 25% 25%,
-  rgba(255, 255, 255, .8) 0 5%,
-  transparent 6%),
-  linear-gradient(135deg,
-  #ffd6a9,
-  #f5a4c4 55%,
-  #b999e9);
+    radial-gradient(circle at 25% 25%,
+      rgba(255, 255, 255, .8) 0 5%,
+      transparent 6%),
+    linear-gradient(135deg,
+      #ffd6a9,
+      #f5a4c4 55%,
+      #b999e9);
 
   color: white;
 }
@@ -361,9 +361,9 @@ HERO
   inset: 0;
 
   background-image:
-  radial-gradient(circle,
-  rgba(255, 255, 255, .5) 1px,
-  transparent 1px);
+    radial-gradient(circle,
+      rgba(255, 255, 255, .5) 1px,
+      transparent 1px);
 
   background-size: 24px 24px;
 
@@ -844,197 +844,6 @@ FOOTER
 }
 
 /* =========================================================
-RESPONSIVE
-========================================================= */
-
-@media (max-width: 900px) {
-
-  .menu {
-    gap: 0;
-  }
-
-  .menu a {
-    padding: 8px 9px;
-
-    font-size: 12px;
-  }
-
-  .hero-content {
-    gap: 35px;
-  }
-
-  .service-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .quote-container {
-    gap: 35px;
-  }
-
-}
-
-@media (max-width: 700px) {
-
-  .container {
-    width: min(var(--container), calc(100% - 28px));
-  }
-
-  .nav {
-    min-height: 58px;
-  }
-
-  .menu-toggle {
-    display: block;
-
-    margin-left: auto;
-  }
-
-  .menu {
-    position: absolute;
-
-    top: 58px;
-    left: 14px;
-    right: 14px;
-
-    display: none;
-
-    flex-direction: column;
-    align-items: stretch;
-
-    padding: 10px;
-
-    background: var(--card);
-
-    border: 1px solid var(--border);
-
-    border-radius: 18px;
-
-    box-shadow: var(--shadow-md);
-  }
-
-  .menu.open {
-    display: flex;
-  }
-
-  .menu a {
-    padding: 13px;
-  }
-
-  .nav-actions {
-    gap: 20px;
-  }
-
-  .nav-actions .login {
-    display: block;
-    font-size: 12px;
-  }
-
-  .nav-actions .btn-small {
-    padding: 0 13px;
-
-    font-size: 11px;
-  }
-
-  .hero {
-    padding: 55px 0 65px;
-  }
-
-  .hero-content {
-    grid-template-columns: 1fr;
-
-    gap: 35px;
-  }
-
-  .hero h1 {
-    font-size: clamp(48px, 15vw, 65px);
-  }
-
-  .hero-image {
-    min-height: 280px;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-
-    align-items: stretch;
-  }
-
-  .steps,
-  .package-grid,
-  .testimonial-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .step-card {
-    padding: 22px;
-  }
-
-  .service-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .section {
-    padding: 65px 0;
-  }
-
-  .package-card.featured {
-    transform: none;
-  }
-
-  .quote-container {
-    grid-template-columns: 1fr;
-  }
-
-  .cta {
-    padding-bottom: 65px;
-  }
-
-  .footer-content {
-    flex-direction: column;
-
-    align-items: flex-start;
-  }
-
-}
-
-@media (max-width: 430px) {
-
-  .logo strong {
-    font-size: 15px;
-  }
-
-  .logo-icon {
-    width: 33px;
-    height: 33px;
-  }
-
-  .nav-actions .btn-small {
-    min-height: 34px;
-  }
-
-  .service-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .service-image {
-    height: 190px;
-  }
-
-  .hero h1 {
-    font-size: 48px;
-  }
-
-  .eyebrow {
-    font-size: 9px;
-  }
-
-  .quote-form {
-    padding: 22px;
-  }
-
-}
-
-/* =========================================================
 MONTE SUA FESTA
 ========================================================= */
 
@@ -1402,7 +1211,8 @@ VISUALIZAR SENHA E LEMBRAR DE MIM
 }
 
 .password-wrapper input {
-  padding-right: 40px !important; /* Espaço para o botão olho */
+  padding-right: 40px !important;
+  /* Espaço para o botão olho */
 }
 
 .toggle-password {
@@ -1488,18 +1298,16 @@ INTRO
 
   border-radius: 50%;
 
-  background: linear-gradient(
-  135deg,
-  #ff7351,
-  #e83f8e
-  );
+  background: linear-gradient(135deg,
+      #ff7351,
+      #e83f8e);
 
   color: white;
 
   font-size: 21px;
 
   box-shadow:
-  0 10px 25px rgba(233, 66, 142, .15);
+    0 10px 25px rgba(233, 66, 142, .15);
 }
 
 .cliente-intro h1 {
@@ -1525,7 +1333,7 @@ INTRO
   color: transparent;
 }
 
-.cliente-intro > p {
+.cliente-intro>p {
   max-width: 430px;
 
   color: var(--muted);
@@ -1583,7 +1391,7 @@ CARD DE LOGIN
   border-radius: 27px;
 
   box-shadow:
-  0 18px 40px rgba(50, 30, 20, .10);
+    0 18px 40px rgba(50, 30, 20, .10);
 }
 
 /* =========================================================
@@ -1626,9 +1434,9 @@ ABAS LOGIN / CRIAR CONTA
   cursor: pointer;
 
   transition:
-  background .2s,
-  color .2s,
-  box-shadow .2s;
+    background .2s,
+    color .2s,
+    box-shadow .2s;
 }
 
 .auth-tab.active {
@@ -1637,7 +1445,7 @@ ABAS LOGIN / CRIAR CONTA
   color: var(--text);
 
   box-shadow:
-  0 1px 5px rgba(50, 30, 20, .10);
+    0 1px 5px rgba(50, 30, 20, .10);
 }
 
 /* =========================================================
@@ -1678,7 +1486,7 @@ FORMULÁRIOS
   border-color: var(--pink);
 
   box-shadow:
-  0 0 0 3px rgba(233, 66, 142, .08);
+    0 0 0 3px rgba(233, 66, 142, .08);
 }
 
 /* =========================================================
@@ -1840,10 +1648,516 @@ FOOTER DA ÁREA DO CLIENTE
 }
 
 /* =========================================================
-RESPONSIVO
+CONTA DO CLIENTE
+========================================================= */
+/* Container principal */
+
+.conta-container {
+  width: min(1100px, 92%);
+
+  margin: 0 auto;
+
+  padding: 50px 0 70px;
+}
+
+
+/* Cabeçalho da conta */
+
+.conta-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 35px;
+}
+
+
+.usuario-info {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+}
+
+
+.usuario-avatar {
+  width: 65px;
+  height: 65px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: linear-gradient(135deg,
+      #ff7a45,
+      #ff4f81);
+
+  font-size: 28px;
+}
+
+
+.saudacao {
+  color: #77727a;
+
+  font-size: 14px;
+}
+
+
+.usuario-info h1 {
+  margin-top: 2px;
+
+  font-family: 'Outfit', sans-serif;
+
+  font-size: 30px;
+}
+
+
+.usuario-info p {
+  color: #77727a;
+
+  font-size: 14px;
+}
+
+
+.btn-sair {
+  padding: 10px 20px;
+
+  border: 1px solid #eee7e3;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  color: #27232a;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+
+.btn-sair:hover {
+  border-color: #ff4f81;
+
+  color: #ff4f81;
+}
+
+
+/* Próxima festa */
+
+.proxima-festa {
+  padding: 30px;
+
+  border: 1px solid #eee7e3;
+
+  border-radius: 22px;
+
+  background: #ffffff;
+
+  box-shadow: 0 10px 30px rgba(50, 30, 20, 0.07);
+}
+
+
+.section-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  margin-bottom: 28px;
+}
+
+
+.section-title>span {
+  font-size: 28px;
+}
+
+
+.section-title h2 {
+  font-family: 'Outfit', sans-serif;
+
+  font-size: 22px;
+}
+
+
+.section-title p {
+  margin-top: 3px;
+
+  color: #77727a;
+
+  font-size: 14px;
+}
+
+
+/* Conteúdo da festa */
+
+.festa-content {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 35px;
+}
+
+
+/* Calendário */
+
+.calendario {
+  padding: 22px;
+
+  border-radius: 16px;
+
+  background: #fffaf8;
+
+  border: 1px solid #eee7e3;
+}
+
+
+.calendario-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 22px;
+}
+
+
+.calendario-header h3 {
+  font-family: 'Outfit', sans-serif;
+
+  font-size: 18px;
+}
+
+
+.mes-btn {
+  width: 32px;
+  height: 32px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #27232a;
+
+  font-size: 20px;
+
+  cursor: pointer;
+}
+
+
+.dias-semana,
+.dias {
+  display: grid;
+
+  grid-template-columns: repeat(7, 1fr);
+
+  gap: 7px;
+
+  text-align: center;
+}
+
+
+.dias-semana {
+  margin-bottom: 10px;
+}
+
+
+.dias-semana span {
+  color: #77727a;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+
+.dia {
+  aspect-ratio: 1;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  font-size: 13px;
+}
+
+
+.dia.destaque {
+  background: linear-gradient(135deg,
+      #ff7a45,
+      #ff4f81);
+
+  color: #ffffff;
+
+  font-weight: 700;
+
+  box-shadow: 0 5px 12px rgba(255, 79, 129, 0.25);
+}
+
+
+.dia.vazio {
+  visibility: hidden;
+}
+
+
+/* Informações da festa */
+
+.festa-info {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+
+.status-festa {
+  width: fit-content;
+
+  margin-bottom: 12px;
+
+  padding: 6px 10px;
+
+  border-radius: 20px;
+
+  background: #e9f9ef;
+
+  color: #269653;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+
+.festa-info h3 {
+  margin-bottom: 22px;
+
+  font-family: 'Outfit', sans-serif;
+
+  font-size: 24px;
+}
+
+
+.info-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  margin-bottom: 15px;
+}
+
+
+.info-item>span {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #fff1ec;
+
+  font-size: 17px;
+}
+
+
+.info-item strong {
+  display: block;
+
+  font-size: 14px;
+}
+
+
+.info-item p {
+  margin-top: 2px;
+
+  color: #77727a;
+
+  font-size: 12px;
+}
+
+
+.btn-detalhes {
+  width: 100%;
+
+  margin-top: 10px;
+
+  padding: 13px 18px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: linear-gradient(90deg,
+      #ff7a45,
+      #ff4f81);
+
+  color: #ffffff;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+
+.btn-detalhes:hover {
+  transform: translateY(-1px);
+
+  opacity: 0.92;
+}
+
+
+/* Acesso rápido */
+
+.atalhos {
+  margin-top: 35px;
+}
+
+
+.atalhos>h2 {
+  margin-bottom: 18px;
+
+  font-family: 'Outfit', sans-serif;
+
+  font-size: 22px;
+}
+
+
+.atalhos-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 15px;
+}
+
+
+.atalho-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 20px;
+
+  border: 1px solid #eee7e3;
+
+  border-radius: 16px;
+
+  background: #ffffff;
+
+  color: #27232a;
+
+  text-decoration: none;
+
+  box-shadow: 0 10px 30px rgba(50, 30, 20, 0.07);
+
+  transition: 0.2s;
+}
+
+
+.atalho-card:hover {
+  transform: translateY(-3px);
+
+  border-color: #ffd3c4;
+}
+
+
+.atalho-icon {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: #fff1ec;
+
+  font-size: 19px;
+}
+
+
+.atalho-card h3 {
+  font-family: 'Outfit', sans-serif;
+
+  font-size: 15px;
+}
+
+
+.atalho-card p {
+  margin-top: 3px;
+
+  color: #77727a;
+
+  font-size: 12px;
+
+  line-height: 1.4;
+}
+
+
+.seta {
+  margin-left: auto;
+
+  color: #77727a;
+
+  font-size: 20px;
+}
+
+/* =========================================================
+RESPONSIVE
 ========================================================= */
 
 @media (max-width: 900px) {
+
+  .menu {
+    gap: 0;
+  }
+
+  .menu a {
+    padding: 8px 9px;
+
+    font-size: 12px;
+  }
+
+  .hero-content {
+    gap: 35px;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .quote-container {
+    gap: 35px;
+  }
 
   .cliente-container {
     gap: 40px;
@@ -1853,9 +2167,149 @@ RESPONSIVO
     gap: 35px;
   }
 
+  /* ================================
+     MINHA CONTA
+  ================================ */
+
+  .conta-container {
+    padding: 30px 20px;
+  }
+
+  .conta-header {
+    gap: 16px;
+  }
+
+  .festa-content {
+    grid-template-columns: 1fr;
+  }
+
+  .atalhos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
 }
 
 @media (max-width: 700px) {
+
+  .container {
+    width: min(var(--container), calc(100% - 28px));
+  }
+
+  .nav {
+    min-height: 58px;
+  }
+
+  .menu-toggle {
+    display: block;
+
+    margin-left: auto;
+  }
+
+  .menu {
+    position: absolute;
+
+    top: 58px;
+    left: 14px;
+    right: 14px;
+
+    display: none;
+
+    flex-direction: column;
+    align-items: stretch;
+
+    padding: 10px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    box-shadow: var(--shadow-md);
+  }
+
+  .menu.open {
+    display: flex;
+  }
+
+  .menu a {
+    padding: 13px;
+  }
+
+  .nav-actions {
+    gap: 20px;
+  }
+
+  .nav-actions .login {
+    display: block;
+    font-size: 12px;
+  }
+
+  .nav-actions .btn-small {
+    padding: 0 13px;
+
+    font-size: 11px;
+  }
+
+  .hero {
+    padding: 55px 0 65px;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+  .hero h1 {
+    font-size: clamp(48px, 15vw, 65px);
+  }
+
+  .hero-image {
+    min-height: 280px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .steps,
+  .package-grid,
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .step-card {
+    padding: 22px;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .section {
+    padding: 65px 0;
+  }
+
+  .package-card.featured {
+    transform: none;
+  }
+
+  .quote-container {
+    grid-template-columns: 1fr;
+  }
+
+  .cta {
+    padding-bottom: 65px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
 
   .cliente-page {
     padding: 50px 0 60px;
@@ -1876,7 +2330,7 @@ RESPONSIVO
     margin-right: auto;
   }
 
-  .cliente-intro > p {
+  .cliente-intro>p {
     margin-left: auto;
     margin-right: auto;
   }
@@ -1908,9 +2362,77 @@ RESPONSIVO
     align-items: start;
   }
 
+  /* ================================
+     MINHA CONTA
+  ================================ */
+
+  .conta-container {
+    padding: 25px 16px;
+  }
+
+  .conta-header {
+    flex-wrap: wrap;
+  }
+
+  .conta-header h1 {
+    font-size: 28px;
+  }
+
+  .festa-content {
+    grid-template-columns: 1fr;
+  }
+
+  .proxima-festa {
+    padding: 22px;
+  }
+
+  .calendario {
+    font-size: 14px;
+  }
+
+  .festa-info {
+    padding: 20px;
+  }
+
+  .atalhos-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-@media (max-width: 430px) {
+@media (max-width: 450px) {
+
+  .logo strong {
+    font-size: 15px;
+  }
+
+  .logo-icon {
+    width: 33px;
+    height: 33px;
+  }
+
+  .nav-actions .btn-small {
+    min-height: 34px;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-image {
+    height: 190px;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .eyebrow {
+    font-size: 9px;
+  }
+
+  .quote-form {
+    padding: 22px;
+  }
 
   .cliente-page {
     padding-top: 35px;
@@ -1920,7 +2442,7 @@ RESPONSIVO
     font-size: 48px;
   }
 
-  .cliente-intro > p {
+  .cliente-intro>p {
     font-size: 13px;
   }
 
@@ -1946,9 +2468,56 @@ RESPONSIVO
     align-items: center;
   }
 
-  .remember-me, 
+  .remember-me,
   .forgot-password {
     font-size: 10.5px;
+  }
+
+  /* ================================
+     MINHA CONTA
+  ================================ */
+
+  .conta-container {
+    padding: 20px 12px;
+  }
+
+  .conta-header {
+    gap: 12px;
+  }
+
+  .conta-header h1 {
+    font-size: 24px;
+  }
+
+  .conta-header p {
+    font-size: 14px;
+  }
+
+  .usuario-avatar {
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+  }
+
+  .proxima-festa {
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+  .proxima-festa h2 {
+    font-size: 20px;
+  }
+
+  .festa-content {
+    grid-template-columns: 1fr;
+  }
+
+  .calendario {
+    font-size: 12px;
+  }
+
+  .festa-info {
+    padding: 16px;
   }
 
 }
